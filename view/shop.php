@@ -50,7 +50,12 @@
                     <div class="grid-list-view">
                     </div>
                     <!-- Select items -->
-
+                    <?php
+                    $page = 1;
+                    $param = array();
+                    $sql = "select count(*) from product";
+                    $dbCon->getPage($sql, $param);
+                    ?>
 
                 </div>
                 <!-- Nav Card -->

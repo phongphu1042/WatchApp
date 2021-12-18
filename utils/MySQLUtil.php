@@ -91,5 +91,28 @@ class MySQLUtil
             echo '<a class="nav-item nav-link active" id="nav-home-tab"  href="shop.php?type_id=' . $row['type_id'] . '" role="tab" aria-controls="nav-home" aria-selected="false">' . $row['type_name'] . '</a>';
         }
     }
+    public function getPage($query, $param = array())
+    {
+        $stmt = self::$conn->prepare($query);
+        $stmt->execute($param);
+        $tong = $stmt->fetchColumn();
+        $sotrang = ceil($tong / 6);
+        echo ' <div class="select-this">';
+        echo '<form action="#"> ';
+        echo '<div class="custom-pagination">';
+        echo '<ul class="pagination"> ';
+        if (isset($_GET['type_id']))
+        for ($i = 1; $i <= $sotrang; $i++)
+            echo ' <li class="page-item"><a class="page-link" href="shop.php?type_id=' . $_GET['type_id'] . '&page=' . $i . '">' . $i . '</a></li> ';
+
+        else {
+            for ($i = 1; $i <= $sotrang; $i++)
+                echo ' <li class="page-item"><a class="page-link" href="shop.php?page=' . $i . '">' . $i . '</a></li> ';
+        }
+        echo '</ul> ';
+        echo '</div>';
+        echo '</form> ';
+        echo '</div>';
+    }
 
 }
