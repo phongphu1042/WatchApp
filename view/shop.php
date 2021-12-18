@@ -35,7 +35,13 @@
                         <!--Nav Button  -->
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                
+                                <?php
+
+                                include '../utils/MySQLUtil.php';
+                                $dbCon = new MySQLUtil();
+                                $query = 'SELECT * FROM type';
+                                $dbCon->getType($query);
+                                ?>
                             </div>
                         </nav>
                         <!--End Nav Button  -->
@@ -44,7 +50,7 @@
                     <div class="grid-list-view">
                     </div>
                     <!-- Select items -->
-                    
+
 
                 </div>
                 <!-- Nav Card -->
@@ -53,7 +59,7 @@
                     <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                         <div class="row">
                             <?php
-             
+
                             if (isset($_GET['page']))
                                 $page = $_GET['page'];
                             if (isset($_GET['type_id'])) {

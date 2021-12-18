@@ -83,5 +83,13 @@ class MySQLUtil
             echo '</div>';
         }
     }
+    public function getType($query)
+    {
+        $stmt = self::$conn->prepare($query);
+        $stmt->execute();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo '<a class="nav-item nav-link active" id="nav-home-tab"  href="shop.php?type_id=' . $row['type_id'] . '" role="tab" aria-controls="nav-home" aria-selected="false">' . $row['type_name'] . '</a>';
+        }
+    }
 
 }
