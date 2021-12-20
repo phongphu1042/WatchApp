@@ -30,8 +30,8 @@
                                     <li><a href="login.php">Login</a></li>
                                     <li><a href="cart.php">Cart</a></li>
                                     <li><a href="elements.php">Element</a></li>
-                                    <li><a href="confirmation.php">Confirmation</a></li>
-                                    <li><a href="checkout.php">Product Checkout</a></li>
+                                    <li><a href="#">Confirmation</a></li>
+                                    <li><a href="#">Product Checkout</a></li>
                                 </ul>
                             </li>
                             <li><a href="contact.php">Contact</a></li>

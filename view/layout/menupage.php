@@ -9,7 +9,7 @@
         <?php
         session_start();
         if (isset($_SESSION["isLogin"])) {
-            echo '<li> <a href="EditUser.php"><span class="flaticon-user">' . $_SESSION["user_email"] . '</span></a></li>';
+            echo '<li> <a href="#"><span class="flaticon-user">' . $_SESSION["user_email"] . '</span></a></li>';
             echo '<li><a href="logoutpage.php"><i class="icon-key"></i> <span>Logout</span></a></li>';
             echo '<li><a href="cart.php"><span class="flaticon-shopping-cart"></span></a> </li>';
         } else {
