@@ -18,7 +18,7 @@ if(isset($_GET['delete'])){
     alertM("Delete user Thành Công", "../view/UserList.php");
 
 }
-else{
+else if(isset($_POST['save'])){
     $txt_id=$_POST["txt_id"];
     $txt_name = $_POST["txt_name"];
     $txt_email = $_POST["txt_email"];
@@ -27,6 +27,12 @@ else{
     $txt_address = $_POST["txt_adress"];
     UserDao::insertUser($txt_id, $txt_name, $txt_email, $txt_pass, $txt_phone,$txt_address);
     alertM("Thêm user Thành Công", "../view/UserList.php");
+}
+else if(isset($_GET['update'])){
+  $id=$_GET['update'];
+  
+  UserDao::updateUser($id,$user_id, $user_name, $user_email, $user_pass,$user_phone, $user_address);
+  alertM("Update user Thành Công", "../view/UserList.php");
 }
 
 
