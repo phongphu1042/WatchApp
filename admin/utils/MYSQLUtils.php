@@ -12,7 +12,7 @@ class MYSQLUtil
         $this->servername="localhost";
         $this->username="root";
         $this->password="";
-        $this->myDB="demo2";   
+        $this->myDB="doan";   
         $this->connectDB();
 
     }
