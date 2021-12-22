@@ -35,7 +35,6 @@ switch ($user_group_action) {
                 $data = UserDao::getUser($login_email);
              
                 if (isset($data["user_email"]) == false) {
-                    die ;
                     alertM("Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. !!!", "../view/login.php");
                     exit;
                 } elseif (!$login_email || !$login_password) {
@@ -48,7 +47,6 @@ switch ($user_group_action) {
                     $_SESSION["user_email"] = $login_email;
                     $_SESSION["isLogin"] = true;
                     alertM("Đăng Nhập Thành Công", "../view/index.php");
-                    die();
                 } else {
                     header("Location: ../view/login.php");
                 }
