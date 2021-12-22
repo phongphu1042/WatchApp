@@ -12,7 +12,7 @@
         <!-- Header End -->
     </header>
     <?php
-    include('../utils/ConnectDB.php');
+    include('../utils/MySQLUtil.php');
     $paraTim = array();
     $trang = 1;
     $search = isset($_GET['search']) ? $_GET['search'] : '';
