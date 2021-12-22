@@ -48,19 +48,19 @@
                 </thead>
                 <tbody>
                   <?php
-                  if (!isset($_SESSION['cart'])) {
-                    $_SESSION['cart'] = array();
-                  }
-                  if (isset($_GET['action'])) {
-                    switch ($_GET['action']) {
-                      case "add":
-                        foreach ($_POST['txtsoluong'] as $id => $Soluong) {
-                          $_SESSION['cart'][$id] = $Soluong;
-                          var_dump($_SESSION['cart']);exit;
-                        }
-                        break;
-                    }
-                  }
+                  // if (!isset($_SESSION['cart'])) {
+                  //   $_SESSION['cart'] = array();
+                  // }
+                  // if (isset($_GET['action'])) {
+                  //   switch ($_GET['action']) {
+                  //     case "add":
+                  //       foreach ($_POST['txtsoluong'] as $id => $Soluong) {
+                  //         $_SESSION['cart'][$id] = $Soluong;
+                  //         var_dump($_SESSION['cart']);exit;
+                  //       }
+                  //       break;
+                  //   }
+                  // }
                   // if (!empty($_SESSION['cart'])) {
                   //   //$sql = "SELECT * FROM xe WHERE maxe IN ('SH150', 'AB19')";
                   //   $sql = "SELECT * FROM product WHERE product_id IN (" . implode(",", array_keys($_SESSION['cart'])) . ")";
@@ -89,9 +89,9 @@
                       echo '<td>';
                       echo '<div class="product_count">';
                       echo '<div class="qty">';
-                      echo '<a href="controller/CartController.php?id=' . $key . '&btn_qty=-1"><button class="btn-minus" name="qty_minus"><i class="fa fa-minus"></i></button></a>';
-                      echo '<input type="text" name="qty_value" value="' . $_SESSION['cart'][$key]['qty_value '] . '"> ';
-                      echo '<a href="controller/CartController.php?id=' . $key . '&btn_qty=1"><button class="btn-plus" name="qty_plus"><i class="fa fa-plus"></i></button></a> ';
+                      echo '<a href="../controller/CartContffoller.php?id=' . $key . '&btn_qty=-1"><button class="btn-minus" name="qty_minus"><i class="fa fa-minus"></i></button></a>';
+                      echo '<input type="text" name="qty_value" value="' . $_SESSION['cart'][$key]['qty_value'] . '"> ';
+                      echo '<a href="../controller/CartController.php?id=' . $key . '&btn_qty=1"><button class="btn-plus" name="qty_plus"><i class="fa fa-plus"></i></button></a> ';
                       echo '</div>';
                       echo '</div> ';
                       echo '</td>';

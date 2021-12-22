@@ -148,45 +148,11 @@ class MySQLUtil
         echo '</div>';
     }
     public function getPrDetails($query, $param = array())
-    {
+    {   
         $stmt = self::$conn->prepare($query);
         $stmt->execute($param);
         $pr = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo '<div class="row s_product_inner">';
-        echo '<div class="col-lg-6"> ';
-        echo '<div class="product_img_slide owl-carousel">';
-        echo '<div class="single_product_img"> ';
-        echo '<img src="assets/img/gallery/' . explode(',', $pr['avtar'])[0] . '" alt="#" class="img-fluid">';
-        echo '</div> ';
-        echo '<div class="single_product_img">';
-        echo '<img src="assets/img/gallery/' . explode(',', $pr['avtar'])[0] . '" alt="#" class="img-fluid"> ';
-        echo '</div>';
-        echo '<div class="single_product_img"> ';
-        echo '<img src="assets/img/gallery/' . explode(',', $pr['avtar'])[0] . '" alt="#" class="img-fluid">';
-        echo '</div> ';
-        echo '</div>';
-        echo '</div> ';
-        echo '<div class="col-lg-5 offset-lg-1">';
-        echo '<div class="s_product_text"> ';
-        echo '<h3>' . $pr['product_name'] . '</h3>';
-        echo '<h2>' . number_format($pr['price']) . ' VNĐ</h2> ';
-        echo '<div class="card_area"> ';
-        echo '<div class="product_count_area"> ';
-        echo '<p>Quantity</p> ';
-        echo '<div class="product_count d-inline-block"> ';
-        echo '<span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>';
-        echo '<input class="product_count_item input-number" type="text" value="1" min="0" max="10"> ';
-        echo '<span class="product_count_item number-increment"> <i class="ti-plus"></i></span>';
-        echo '</div> ';
-        echo '<p>' . number_format($pr['price']) . ' VNĐ</p>';
-        echo '</div>';
-        echo '<div class="add_to_cart">';
-        echo '<a href="#" class="btn_3">add to cart</a> ';
-        echo '</div>';
-        echo '</div> ';
-        echo '</div>';
-        echo '</div> ';
-        echo '</div>';
+        return $pr;
     }
 
 }

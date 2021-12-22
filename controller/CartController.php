@@ -1,53 +1,58 @@
 <?php
-
+    var_dump($_GET);
+    if(isset($_GET)){
+        $value = $_GET["btn_qty"];
+    }
+    if(isset($_GET)){
+        $value = $_POST['btn_qty'];
+    }
+    $product_id=$_GET['id'];
+    include '../utils/MySQLUtil.php';
+    $dbCon = new MySQLUtil();
+    $param = array();
+    $query ="";
+    if (isset($_GET['id'])) {
+        $query = "select * from product where product_id=?";
+        $param[] = $_GET['id'];
+    } 
+    $pr= $dbCon-> getPrDetails($query, $param);
     session_start();
-
-    
-    
-    $id =isset($_GET["id"])?$_GET["id"]:'';
     if(isset($_SESSION['cart']))
     {
-        if ($_GET["btn_qty"]==0) {
-            unset($_SESSION['cart'][$id]);
+        if ($value==0) {
+            unset($_SESSION['cart'][$product_id]);
         }
         else{
-            switch ($_GET["btn_qty"]) {
+            switch ($value) {
                 case 1:
-                    $_SESSION['cart'][$id]['qty_value']=$_SESSION['cart'][$id]['qty_value']+1;
+                    $_SESSION['cart'][$product_id]['qty_value']=$_SESSION['cart'][$product_id]['qty_value']+1;
                     break;
                 case 1:
-                    if ( $_SESSION['cart'][$id]['qty_value']<=0) {
-                        $_SESSION['cart'][$id]['qty_value']=0;
+                    if ( $_SESSION['cart'][$product_id]['qty_value']<=0) {
+                        $_SESSION['cart'][$product_id]['qty_value']=0;
                     }
                     else {
-                        $_SESSION['cart'][$id]['qty_value']=$_SESSION['cart'][$id]['qty_value']-1;
+                        $_SESSION['cart'][$product_id]['qty_value']=$_SESSION['cart'][$product_id]['qty_value']-1;
                     }
                     break;
                 default:
-                    foreach ($arr_img as $key => $value) {
-                        $id=$key;
-                        $_SESSION['cart'][$id]['avtar']=$arr_img[$id];
-                        $_SESSION['cart'][$id]['product_name'] = $arr_name[$id];
-                        $_SESSION['cart'][$id]['price']=$arr_price[$id];
-                        $_SESSION['cart'][$id]['qty_value']=1;
-                    }
+                         $_SESSION['cart'][$product_id]['qty_value']=$_SESSION['cart'][$product_id]['qty_value']+$value;
                     break;
             }
-            $_SESSION['cart'][$id]['avtar']=$arr_img[$id];
-            $_SESSION['cart'][$id]['product_name'] = $arr_name[$id];
-            $_SESSION['cart'][$id]['price']=$arr_price[$id];
+            $_SESSION['cart'][$product_id]['product_name'] = $pr['product_name'];
+            $_SESSION['cart'][$product_id]['avtar']=$pr['avtar'];
+            $_SESSION['cart'][$product_id]['price']=$pr['price'];
+
+           
         }
-        header("Location:../cart.php");exit();
+        header("Location:../view/cart.php");exit();
     }
     else
     {
-        foreach ($arr_img as $key => $value) {
-            $id=$key;
-            $_SESSION['cart'][$id]['avtar']=$arr_img[$id];
-            $_SESSION['cart'][$id]['product_name'] = $arr_name[$id];
-            $_SESSION['cart'][$id]['price']=$arr_price[$id];
-            $_SESSION['cart'][$id]['qty_value']=1;
-        }
-        header("Location:../cart.php");exit();
+        $_SESSION['cart'][$product_id]['avtar']=$pr['avtar'];
+        $_SESSION['cart'][$product_id]['product_name'] = $pr['product_name'];
+        $_SESSION['cart'][$product_id]['price']=$pr['price'];
+        $_SESSION['cart'][$product_id]['qty_value']=$value;
+        header("Location:../view/cart.php");exit();
     }
 ?>
