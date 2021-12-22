@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -64,7 +65,8 @@
                 echo '<div class="card_area"> ';
                 echo '<div class="product_count_area"> ';
                 echo '<p>Quantity</p> ';
-                echo '<form action="../controller/CartController.php?id='.$pr['product_id'].'" method="POST" >';
+                echo '<form action="../controller/CartController.php" method="GET" >';
+                echo '<input type="hidden" name="id" value="'.$pr['product_id'].'">';
                 echo '<div class="product_count d-inline-block"> ';
                 echo '<span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>';
                 echo '<input class="product_count_item input-number" name="btn_qty" type="text" value="1" min="0" max="10"> ';
