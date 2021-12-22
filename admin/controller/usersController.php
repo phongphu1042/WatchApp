@@ -35,9 +35,8 @@ switch ($user_group_action) {
             $_SESSION["isLogin"] = true;
             alertM("Đăng Nhập Thành Công", "../view/UserList.php");
             die();
-        } else {
-            header("Location: ../view/login.php");
         }
+        
         break;
     case 'user_create':
         $txt_id = $_POST["txt_id"];
