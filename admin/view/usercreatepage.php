@@ -2,51 +2,51 @@
 <html lang="en">
 
 <head>
-  <?php include 'layout/header.php'; ?>
+    <?php include 'layout/header.php'; ?>
 
 </head>
 
 <body>
 
-  <!--*******************
+    <!--*******************
         Preloader start
     ********************-->
-  <?php include 'layout/Preloader_start.php'; ?>
-  <!--*******************
+    <?php include 'layout/Preloader_start.php'; ?>
+    <!--*******************
         Preloader end
     ********************-->
 
 
-  <!--**********************************
+    <!--**********************************
         Main wrapper start
     ***********************************-->
-  <div id="main-wrapper">
+    <div id="main-wrapper">
 
-    <!--**********************************
+        <!--**********************************
             Nav header start
         ***********************************-->
-     <?php include 'layout/Nav_header_start.php'; ?>
-    <!--**********************************
+        <?php include 'layout/Nav_header_start.php'; ?>
+        <!--**********************************
             Nav header end
         ***********************************-->
 
-    <!--**********************************
+        <!--**********************************
             Header start
         ***********************************-->
-     <?php include 'layout/Header_start.php'; ?>
-    <!--**********************************
+        <?php include 'layout/Header_start.php'; ?>
+        <!--**********************************
             Header end ti-comment-alt
         ***********************************-->
 
-    <!--**********************************
+        <!--**********************************
             Sidebar start
         ***********************************-->
-     <?php include 'layout/Sidebar_start.php'; ?>
-    <!--**********************************
+        <?php include 'layout/Sidebar_start.php'; ?>
+        <!--**********************************
             Sidebar end
         ***********************************-->
 
-    <!--**********************************
+        <!--**********************************
             Content body start
         ***********************************-->
         <div class="content-body">
@@ -71,27 +71,27 @@
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-md-3"><label for="password-input" class=" form-control-label">password</label></div>
-                                            <div class="col-12 col-md-9"><input  id="txt_pass" name="txt_pass" class="form-control"></div>
+                                            <div class="col-12 col-md-9"><input id="txt_pass" name="txt_pass" class="form-control"></div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-md-3"><label for="password-input" class=" form-control-label">phone</label></div>
-                                            <div class="col-12 col-md-9"><input  id="txt_phone" name="txt_phone" class="form-control"></div>
+                                            <div class="col-12 col-md-9"><input id="txt_phone" name="txt_phone" class="form-control"></div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-md-3"><label for="password-input" class=" form-control-label">Adress</label></div>
-                                            <div class="col-12 col-md-9"><input  id="txt_adress" name="txt_adress" class="form-control"></div>
+                                            <div class="col-12 col-md-9"><input id="txt_adress" name="txt_adress" class="form-control"></div>
                                         </div>
                                         <div class="row form-group">
-                                            
+
                                             <div class="col col-md-3"><label for="file-input" class=" form-control-label">Avatar</label></div>
-                                            <div class="col-12 col-md-9"><input  type="file" name="fileToUpload" id="fileToUpload" class="form-control-file"></div>
-                                        
+                                            <div class="col-12 col-md-9"><input type="file" name="fileToUpload" id="fileToUpload" class="form-control-file"></div>
+
                                         </div>
                                         <div>
-                                            <button name="save" value="save" type="submit" class="btn btn-primary btn-sm">
+                                            <button id="btn_test" name="user_group_action" value="user_create" type="submit" class="btn btn-primary btn-sm">
                                                 <i class="fa fa-dot-circle-o"></i> Create
                                             </button>
-                                            
+
                                         </div>
                                     </form>
                                 </div>
@@ -111,18 +111,18 @@
             Footer start
         ***********************************-->
         <?php include 'layout/Footer.php'; ?>
-    <!--**********************************
+        <!--**********************************
             Footer end
         ***********************************-->
- 
-  <!--**********************************
+
+        <!--**********************************
         Main wrapper end
     ***********************************-->
 
-  <!--**********************************
+        <!--**********************************
         Scripts
     ***********************************-->
-  <?php include 'layout/Scripts.php'; ?>
+        <?php include 'layout/Scripts.php'; ?>
 
 </body>
 

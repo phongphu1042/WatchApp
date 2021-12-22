@@ -21,11 +21,11 @@ class UserDao
         $myDB->disconnectDB();
     }
 
-    public static function getUser($id)
+    public static function getUser($user_email)
     {
-        $myDB = new MYSQLUtil();
-        $query = "SELECT `user_id`, `user_name`, `user_email`, `user_pass`, `user_phone`, `user_address` FROM `user` where user_id=:user_id";
-        $param = array(":user_id" => $id);
+        $myDB = new MySQLUtil();
+        $query = "SELECT user_name,user_email,user_pass FROM user where user_email=:user_email";
+        $param = array(":user_email" => $user_email);
         $data = $myDB->getData($query, $param);
         $myDB->disconnectDB();
         return $data[0];
