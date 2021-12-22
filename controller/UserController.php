@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once '../utils/DataValidactionUtils.php';
-include_once './BaseController.php';
+
+
 include '../dao/UserDao.php';
 
 
@@ -35,6 +35,7 @@ switch ($user_group_action) {
                 $data = UserDao::getUser($login_email);
              
                 if (isset($data["user_email"]) == false) {
+                    die ;
                     alertM("Tên đăng nhập này không tồn tại. Vui lòng kiểm tra lại. !!!", "../view/login.php");
                     exit;
                 } elseif (!$login_email || !$login_password) {
