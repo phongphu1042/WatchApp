@@ -34,8 +34,6 @@
       <div class="container">
         <div class="cart_inner">
           <div class="table-responsive">
-
-            <form action="cart.php?action=submit" method="POST" enctype="multipart/form-data">
               <table class="table">
                 <thead>
                   <tr>
@@ -89,7 +87,7 @@
                       echo '<td>';
                       echo '<div class="product_count">';
                       echo '<div class="qty">';
-                      echo '<a href="../controller/CartContffoller.php?id=' . $key . '&btn_qty=-1"><button class="btn-minus" name="qty_minus"><i class="fa fa-minus"></i></button></a>';
+                      echo '<a href="../controller/CartController.php?id=' . $key . '&btn_qty=-1"><button class="btn-minus" name="qty_minus"><i class="fa fa-minus"></i></button></a>';
                       echo '<input type="text" name="qty_value" value="' . $_SESSION['cart'][$key]['qty_value'] . '"> ';
                       echo '<a href="../controller/CartController.php?id=' . $key . '&btn_qty=1"><button class="btn-plus" name="qty_plus"><i class="fa fa-plus"></i></button></a> ';
                       echo '</div>';
@@ -179,7 +177,6 @@
                 <a class="btn_1" href="#">Continue Shopping</a>
                 <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
               </div>
-            </form>
           </div>
         </div>
     </section>
