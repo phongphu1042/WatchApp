@@ -24,7 +24,7 @@ class UserDao
     public static function getUser($user_email)
     {
         $myDB = new MySQLUtil();
-        $query = "SELECT user_name,user_email,user_pass FROM user where user_email=:user_email";
+        $query = "SELECT user_email,user_pass FROM user where user_email=:user_email";
         $param = array(":user_email" => $user_email);
         $data = $myDB->getData($query, $param);
         $myDB->disconnectDB();
