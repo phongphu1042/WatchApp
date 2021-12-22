@@ -43,7 +43,7 @@ switch ($user_group_action) {
             $_SESSION["user_email"] = $login_email;
             $_SESSION["isLogin"] = true;
             alertM("Đăng Nhập Thành Công", "../view/UserList.php");
-            die();
+          
         } else {
             header("Location: ../view/login.php");
         }
