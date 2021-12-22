@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="h-100" lang="en">
 
@@ -11,11 +10,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
     <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
     <link href="css/style.css" rel="stylesheet">
-    
+
 </head>
 
 <body class="h-100">
-    
+
     <!--*******************
         Preloader start
     ********************-->
@@ -37,15 +36,17 @@
                     <div class="form-input-content">
                         <div class="card login-form mb-0">
                             <div class="card-body pt-5">
-                                <a class="text-center" href="index.html"> <h4>Rosella</h4></a>
-                                <form class="mt-5 mb-5 login-input">
+                                <a class="text-center" href="index.html">
+                                    <h4>Rosella</h4>
+                                </a>
+                                <form action="../controller/usersController.php" method="POST" enctype="multipart/form-data" class="form-horizontal">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Email">
+                                        <input type="email" class="form-control" id="login_email" name="login_email" value="" placeholder="Email">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Password">
+                                        <input type="password" class="form-control" id="login_password" name="login_password" value="" placeholder="Password">
                                     </div>
-                                    <button class="btn login-form__btn submit w-100">Sign In</button>
+                                    <button type="submit" id="btn_test" name="user_group_action" value="user_login" class="btn login-form__btn submit w-100">Sign In</button>
                                 </form>
                                 <p class="mt-5 login-form__footer">Dont have account? <a href="page-register.html" class="text-primary">Sign Up</a> now</p>
                             </div>
@@ -55,9 +56,9 @@
             </div>
         </div>
     </div>
-    
 
-    
+
+
 
     <!--**********************************
         Scripts
@@ -68,9 +69,5 @@
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
 </body>
+
 </html>
-
-
-
-
-
